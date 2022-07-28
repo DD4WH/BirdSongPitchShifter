@@ -20,3 +20,8 @@ I use a Teensy 4.0 with an ADC PCM1808 and DAC5102a, but it should also run with
 
 The following sketch contains a real-time implementation of all the above mentioned methods, so I can switch and tweak them. Audio comes from the 3.5mm audio plug of my smartphone into the ADC and I can hear the result in my headphones. I implemented all methods in Stereo. Five buttons are used to toggle ON/OFF an input 2.5kHz highpass filter, to switch between the algorithms and to increase/decrease the amount of pitch shift of the specific method.
 
+This is the setup (please note that all modules in the bottom right corner are float 32-bit processing modules; everything right and below of the "convertInR")
+
+![grafik](https://user-images.githubusercontent.com/14326464/181578675-f4bb46a2-99e4-4e08-8506-0f7c6fb2127d.png)
+
+If you want to run the sketch, read carefully through the comments in the header: you need to download and copy some files into your local Arduino folder. It runs on Teensy 4 only (and has 75% CPU load). 
