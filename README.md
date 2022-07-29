@@ -6,11 +6,11 @@ Many people suffer from high frequency hearing loss, especially people above the
 My scan of the Teensy forum revealed several existing libraries/algorithms for altering the pitch of audio sounds:
 
 
-* Granular effect - in the Teensy Audio library
-* Heterodyning, i.e. multiplying the audio with a sine wave of given frequency - implementable with the Audio Library
-* Vocoder / pitch shifting in the frequency domain - sophisticated algorithm by Stephan Bernsee, implemented by Duff2013 for the Teensy
-* Formant shifting in the frequency domain - sophisticated algorithm by Chip Audette, implemented in the Tympan library and later by Bob Larkin in the OpenAudio_Arduino_lib
-* Frequency shifting by Quadrature Modulation - implemented by Bob Larkin in the OpenAudio library, originally intended for Software Defined Radio 
+* **Granular effect** - in the Teensy Audio library
+* **Heterodyning**, i.e. multiplying the audio with a sine wave of given frequency - implementable with the Audio Library
+* **Vocoder / pitch shifting** in the frequency domain - sophisticated algorithm by Stephan Bernsee, implemented by Duff2013 for the Teensy
+* **Formant shifting** in the frequency domain - sophisticated algorithm by Chip Audette, implemented in the Tympan library and later by Bob Larkin in the OpenAudio_Arduino_lib
+* **Frequency shifting** by Quadrature Modulation - implemented by Bob Larkin in the OpenAudio library, originally intended for Software Defined Radio 
 
 
 
