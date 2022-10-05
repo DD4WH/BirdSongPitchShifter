@@ -26,5 +26,8 @@ This is the setup (please note that all modules in the bottom right corner are f
 
 If you want to run the sketch, read carefully through the comments in the header: you need to download and copy some files into your local Arduino folder. It runs on Teensy 4 only (and has 75% CPU load). 
 
+OLA_Harold is a completely different implementation and a stand-alone sketch that runs without installing additional libs.
+It implements pitch shifting in the time domain and is based on an idea by Harold Mills and Lang Elliott for the "Hear birds again"-project. It can shift the audio down by a factor of two (one octave), three (1.5 octaves) or four (two octaves). Here is a graph showing the implementation.
+
 ![grafik](https://user-images.githubusercontent.com/14326464/192025404-fd7cb0a5-075f-4cdd-96d4-60ec2c061aa3.png)
 My self-built binaural headset with Koss KSC75 headset and two low-noise AOM5024 electret mics fixed on the earbuds. See HERE (https://hearbirdsagain.org/binaural-headset/) for an explanation and building instructions. I hope to be able to use this as a realtime input to the Teensy setup soon. 
