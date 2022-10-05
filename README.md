@@ -26,8 +26,8 @@ This is the setup (please note that all modules in the bottom right corner are f
 
 If you want to run the sketch, read carefully through the comments in the header: you need to download and copy some files into your local Arduino folder. It runs on Teensy 4 only (and has 75% CPU load). 
 
-OLA_Harold is a completely different implementation and a stand-alone sketch that runs without installing additional libs.
-It implements pitch shifting in the time domain and is based on an idea by Harold Mills and Lang Elliott for the "Hear birds again"-project. It can shift the audio down by a factor of two (one octave), three (1.5 octaves) or four (two octaves). Here is a graph showing the implementation.
+**OLA_Harold** is a completely different implementation and a stand-alone sketch that runs without installing additional libs.
+It implements **pitch shifting in the time domain** and is based on an idea by Harold Mills and Lang Elliott for the "Hear birds again"-project. It can shift the audio down by a factor of two (one octave), three (1.5 octaves) or four (two octaves). Here is a graph showing the implementation.
 ![grafik](https://user-images.githubusercontent.com/14326464/194013110-f01d8397-0838-47c0-8373-3df8eebc1835.png)
 
 
