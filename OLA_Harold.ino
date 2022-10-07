@@ -1,10 +1,15 @@
 /*
  * Pitch shifting in the time domain
  * 
- * implementation of an idea by Lang Elliott & an algorithm by Harold Mills - Hear birds again
+ * implements pitch shifting in the time domain and is based on an idea by Lang Elliott & Herb Susmann for the "Hear birds again"-project,
+ * specifically for the now deprecated SongFinder pitch shifter units. 
+ * The algorithm can shift the audio down by a factor of two (one octave), three (1.5 octaves) or four (two octaves). 
+ * Find a graph showing the implementation for the case of downshifting by 4 here:
+ * 
+ * Many thanks go to Harold Mills & Lang Elliott for explaining this algorithm to me and answering my questions ! :-) 
  * https://hearbirdsagain.org/
  * 
- * (c) Frank DD4WH 2022-09-30
+ * (c) Frank DD4WH 2022-10-05
  * 
  * uses Teensy 4.0 and external ADC / DAC connected on perf board with ground plane
  * 
@@ -77,7 +82,7 @@ AudioConnection          patchCord10(mixright, 0, i2s_out, 0);
 
 int shift = 4; 
 #define BLOCK_SIZE 128
-const int N_BLOCKS = 6; //9; // has to be dividable by 2 AND by 3 // 6 blocks of 128 samples == 768 samples = 17.4ms
+const int N_BLOCKS = 6; //9; // 6 blocks á 128 samples  = 768 samples. No. of samples has to be dividable by 2 AND by 3 AND by 4 // 6 blocks of 128 samples == 768 samples = 17.4ms
 const int WINDOW_LENGTH = N_BLOCKS * BLOCK_SIZE;
 const int WINDOW_LENGTH_D_2 = WINDOW_LENGTH / 2;
 const int IN_BUFFER_SIZE = WINDOW_LENGTH;
@@ -129,9 +134,9 @@ void setup() {
 
   for(unsigned idx=0; idx < WINDOW_LENGTH; idx++)
   { // von Hann window
-   // window[idx] = 0.5f * (1.0f - cosf(TWO_PI * (float)idx / ((float)(WINDOW_LENGTH - 1))));  
+     window[idx] = 0.5f * (1.0f - cosf(TWO_PI * (float)idx / ((float)(WINDOW_LENGTH - 1))));  
     // Blackman-Nuttall
-    window[idx] = 0.3635819f - 0.4891775f*cosf(2.0*M_PI*(float)idx/((float)(WINDOW_LENGTH-1))) + 0.1365995*cosf(FOURPI*(float)idx/((float)(WINDOW_LENGTH-1))) - 0.0106411f*cosf(SIXPI*(float)idx/((float)(WINDOW_LENGTH-1)));  
+    //window[idx] = 0.3635819f - 0.4891775f*cosf(2.0*M_PI*(float)idx/((float)(WINDOW_LENGTH-1))) + 0.1365995*cosf(FOURPI*(float)idx/((float)(WINDOW_LENGTH-1))) - 0.0106411f*cosf(SIXPI*(float)idx/((float)(WINDOW_LENGTH-1)));  
   }
 
   // Interpolation filter
