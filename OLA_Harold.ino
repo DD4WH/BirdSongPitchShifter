@@ -4,7 +4,7 @@
  * implements pitch shifting in the time domain and is based on an idea by Lang Elliott & Herb Susmann for the "Hear birds again"-project,
  * specifically for the now deprecated SongFinder pitch shifter units. 
  * The algorithm can shift the audio down by a factor of two (one octave), three (1.5 octaves) or four (two octaves). 
- * Find a graph showing the implementation for the case of downshifting by 4 here:
+ * Find a graph showing the implementation for the case of downshifting by 4 here: https://github.com/DD4WH/BirdSongPitchShifter#readme
  * 
  * Many thanks go to Harold Mills & Lang Elliott for explaining this algorithm to me and answering my questions ! :-) 
  * https://hearbirdsagain.org/
